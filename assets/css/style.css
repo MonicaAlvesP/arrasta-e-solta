@@ -1,0 +1,94 @@
+:root {
+  --background-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --border-color: #cdd6f4;
+  --highlight-color:rgb(64, 255, 0);
+  --hover-background: rgba(80, 250, 123, 0.3);
+  --item-background: #313244;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background-color);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+h1 {
+  color: var(--text-color);
+  margin: 20px 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  transition: color 0.3s ease;
+}
+
+.neutralArea {
+  width: 450px;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: var(--item-background);
+  color: var(--text-color);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.item.dragging {
+  opacity: 0.5;
+}
+
+.areas {
+  width: 450px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.areas.correct .area {
+  border: 2px solid var(--highlight-color);
+}
+
+.area {
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.area:hover {
+  background-color: var(--hover-background);
+}
+
+footer {
+  margin-top: 20px;
+  color: var(--text-color);
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
